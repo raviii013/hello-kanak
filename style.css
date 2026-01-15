@@ -229,6 +229,9 @@ body {
     bottom: -20px;
     border: 3px solid var(--color-black);
     font-family: 'Dancing Script', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .date__of__birth span, .name span{
     font-weight: bold;
@@ -454,6 +457,13 @@ body {
     animation: scaleCricle 3s 15s forwards ease-in-out;
 }
 
+.cat__icon{
+    position: absolute;
+    bottom: 70px;
+    left: 600px;
+    transform: scale(0);
+    animation: scaleCricle 3s 15s forwards ease-in-out;
+}
 
 .box__letter{
     position: fixed;
@@ -1022,4 +1032,54 @@ body {
     cursor: pointer;
     color: rgb(248, 78, 78);
     z-index: 10000000000000000;
+}
+
+.fbi__popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+}
+
+.fbi__content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+.fbi__content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.fbi__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.fbi__close:hover {
+    background: #cc0000;
 }
