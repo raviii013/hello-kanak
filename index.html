@@ -82,6 +82,9 @@
                         <img width="100px" src="./images/balloon2.png" alt="">
                     </div>
                 </div>
+                <div class="kk7-image">
+                    <img src="./images/kk7.jpg" alt="">
+                </div>
                 <div class="cricle">
                     <div class="text__cricle">
                         <span style="--i: 1;">h</span>
@@ -133,6 +136,18 @@
             <i class="fa-solid fa-xmark"></i>
             <div class="boxMail-container">
                 <div class="card1">
+                    <div class="corner-image corner-top-left">
+                        <img src="./images/kk3.jpg" alt="">
+                    </div>
+                    <div class="corner-image corner-top-right">
+                        <img src="./images/kk4.jpg" alt="">
+                    </div>
+                    <div class="corner-image corner-bottom-left">
+                        <img src="./images/kk5.jpg" alt="">
+                    </div>
+                    <div class="corner-image corner-bottom-right">
+                        <img src="./images/kk6.jpg" alt="">
+                    </div>
                     <div class="userImg">
                         <img src="images/kk2.jpg" alt="">
                     </div>
@@ -163,9 +178,9 @@
 
                             <div class="imageCute2">
                                 <img src="cute2.png" alt="">
-                                <img id="mewmew" src="./images/mewmew.gif" alt="">
-                                <img src="./images/kk2.jpg" alt="" width="80">
-                                <img id="mewmew" src="./images/mewmew.gif" alt="">
+                                <img id="mewmew" class="mewmew-animation" src="./images/mewmew.gif" alt="">
+                                <img class="mewmew-animation" src="./images/kk2.jpg" alt="" width="80">
+                                <img id="mewmew" class="mewmew-animation" src="./images/mewmew.gif" alt="">
                             </div>
                         </div>
                         </div>
@@ -282,10 +297,50 @@
     mailBox.onclick = function () {
         mailBox.classList.toggle('active')
         boxmail.classList.add('active')
+        
+        // Show FBI gif first
+        document.getElementById('fbiGifOverlay').style.display = 'flex';
+        document.getElementById('cardContent').style.opacity = '0';
+        
+        // Reset all animations
+        document.querySelectorAll('.mewmew-animation').forEach(function(img) {
+            img.classList.remove('animationOp');
+        });
+        document.querySelector('.imageCute2').style.opacity = '0';
+        document.querySelector('.imageCute2').style.animation = 'none';
+        
+        // After 3 seconds, hide FBI gif and show all card content with transitions
+        setTimeout(function () {
+            document.getElementById('fbiGifOverlay').style.display = 'none';
+            document.getElementById('cardContent').style.opacity = '1';
+            
+            // Trigger mewmew animations
+            setTimeout(function() {
+                document.querySelectorAll('.mewmew-animation').forEach(function(img) {
+                    img.classList.add('animationOp');
+                });
+            }, 100);
+            
+            // Trigger imageCute2 animation
+            setTimeout(function() {
+                var imageCute2 = document.querySelector('.imageCute2');
+                imageCute2.style.opacity = '1';
+                imageCute2.style.animation = 'cute3 1s linear infinite, cute4 3s 2s forwards';
+            }, 200);
+        }, 3000);
     }
 
     close.addEventListener('click', function () {
         boxmail.classList.remove('active')
+        // Reset on close
+        document.getElementById('fbiGifOverlay').style.display = 'flex';
+        document.getElementById('cardContent').style.opacity = '0';
+        document.querySelectorAll('.mewmew-animation').forEach(function(img) {
+            img.classList.remove('animationOp');
+        });
+        var imageCute2 = document.querySelector('.imageCute2');
+        imageCute2.style.opacity = '0';
+        imageCute2.style.animation = 'none';
     })
 </script>
 
