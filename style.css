@@ -268,24 +268,6 @@ body {
     object-fit: cover;
 
 }
-.kk7-image{
-    position: absolute;
-    top: -90px;
-    right: 50px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid var(--color-black);
-    transform: scale(0);
-    animation: scaleCricle 3s 15s forwards ease-in-out;
-    z-index: 1;
-}
-.kk7-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 .cricle{
     position: absolute;
     top: 20px;
@@ -634,12 +616,6 @@ body {
 #mewmew.animationOp{
     animation: opacityHeart 1s 1s forwards;
 }
-.mewmew-animation{
-    opacity: 0;
-}
-.mewmew-animation.animationOp{
-    animation: opacityHeart 1s 1s forwards;
-}
 
 
 #copy {
@@ -896,36 +872,6 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.boxMail .boxMail-container .card1 .corner-image{
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid var(--color-black);
-    z-index: 10;
-}
-.boxMail .boxMail-container .card1 .corner-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.boxMail .boxMail-container .card1 .corner-top-left{
-    top: 10px;
-    left: 10px;
-}
-.boxMail .boxMail-container .card1 .corner-top-right{
-    top: 10px;
-    right: 10px;
-}
-.boxMail .boxMail-container .card1 .corner-bottom-left{
-    bottom: 10px;
-    left: 10px;
-}
-.boxMail .boxMail-container .card1 .corner-bottom-right{
-    bottom: 10px;
-    right: 10px;
-}
 .boxMail-container .card1{
     z-index: 1;
     -webkit-transform-style: preserve-3d;
@@ -1086,33 +1032,6 @@ body {
     cursor: pointer;
     color: rgb(248, 78, 78);
     z-index: 10000000000000000;
-}
-.mewmew-transition{
-    opacity: 0;
-    transform: scale(0);
-    animation: mewmewAppear 0.8s ease-out forwards;
-}
-.mewmew-transition:nth-child(1){
-    animation-delay: 0.1s;
-}
-.mewmew-transition:nth-child(2){
-    animation-delay: 0.2s;
-}
-.mewmew-transition:nth-child(3){
-    animation-delay: 0.3s;
-}
-@keyframes mewmewAppear{
-    0%{
-        opacity: 0;
-        transform: scale(0) rotate(-180deg);
-    }
-    50%{
-        transform: scale(1.2) rotate(10deg);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
 }
 
 .fbi__popup {
